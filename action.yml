@@ -1,0 +1,18 @@
+# action.yml
+name: 'OTEL Collector Builder'
+description: 'Use the OTEL Collector Builder in a Github Action'
+inputs:
+  collector_builder_version:
+    description: 'Version of the collector builder to use'
+    default: '0.84.0'
+  output_dir:
+    description: 'Path to the output directory of the finished binary'
+    default: 'build/otelcollector'
+outputs:
+  time: # id of output
+    description: 'The time we greeted you'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.who-to-greet }}
