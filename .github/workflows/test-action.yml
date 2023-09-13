@@ -10,7 +10,7 @@ jobs:
         id: collector-build
         uses: jwafle/auto-collector-builder@main
         with:
-          collector_builder_version: '0.84.0'
+          collector_builder_version: '0.85.0'
           config_file: 'test-config.yml'
       - name: Print the output location
         run: echo "The file is ${{ steps.collector-build.outputs.collector_binary_path }}"
