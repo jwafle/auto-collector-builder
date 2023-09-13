@@ -2,6 +2,7 @@
 FROM golang:1.21
 
 ARG TARGETARCH
+ENV TARGETARCH ${TARGETARCH}
 
 COPY entrypoint.sh /entrypoint.sh
 
