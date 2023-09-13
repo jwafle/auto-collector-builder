@@ -13,5 +13,4 @@ jobs:
           collector_builder_version: '0.84.0'
           config_file: 'test-config.yml'
       - name: Print the output location
-        needs: [collector-build]
         run: echo "The file is ${{ steps.collector-build.outputs.collector_binary_path }}"
