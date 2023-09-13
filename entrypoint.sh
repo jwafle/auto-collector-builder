@@ -11,9 +11,9 @@ echo "The collector builder version is: ${COLLECTOR_BUILDER_VERSION}"
 curl -L -o /ocb https://github.com/open-telemetry/opentelemetry-collector/releases/download/cmd%2Fbuilder%2Fv${COLLECTOR_BUILDER_VERSION}/ocb_${COLLECTOR_BUILDER_VERSION}_linux_${TARGETARCH}
 chmod +x /ocb
 
-
 mkdir -p ${OUTPUT_DIR}
 chmod 777 ${OUTPUT_DIR}
+
 echo "Building using /builder --config ${CONFIG_PATH}"
 /ocb --config ${CONFIG_PATH} --output-path ${OUTPUT_DIR}
 chmod 755 ${OUTPUT_DIR}
