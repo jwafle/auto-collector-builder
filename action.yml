@@ -8,11 +8,16 @@ inputs:
   output_dir:
     description: 'Path to the output directory of the finished binary'
     default: '_build/otelcollector'
+  config_file:
+    description: 'Path to the collector builder config file'
+    required: true
+    default: 'config.yaml'
 outputs:
-  time: # id of output
-    description: 'The time we greeted you'
+  collector_binary_path:
+    description: 'Path to the finished binary, same as output_dir'
 runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ inputs.who-to-greet }}
+    - ${{ inputs.output_dir}}
+    - ${{ inputs.config_file }}
