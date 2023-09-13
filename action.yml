@@ -5,9 +5,6 @@ inputs:
   collector_builder_version:
     description: 'Version of the collector builder to use'
     default: '0.84.0'
-  output_dir:
-    description: 'Path to the output directory of the finished binary'
-    default: '_build/otelcollector'
   config_file:
     description: 'Path to the collector builder config file'
     required: true
@@ -19,6 +16,5 @@ runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ inputs.output_dir }}
     - ${{ inputs.config_file }}
     - ${{ inputs.collector_builder_version }}
