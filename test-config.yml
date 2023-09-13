@@ -1,21 +1,13 @@
+dist:
+  name: otelcol-custom
+  description: Local OpenTelemetry Collector binary
+  output_path: /tmp/dist
+exporters:
+  - gomod: github.com/open-telemetry/opentelemetry-collector-contrib/exporter/alibabacloudlogserviceexporter v0.69.0
+  - gomod: go.opentelemetry.io/collector/exporter/loggingexporter v0.69.1
+
 receivers:
-  otlp:
-    protocols:
-      grpc:
-        endpoint: localhost:4317
+  - gomod: go.opentelemetry.io/collector/receiver/otlpreceiver v0.69.1
 
 processors:
-  batch:
-
-exporters:
-  logging:
-
-service:
-  pipelines:
-    traces:
-      receivers:
-      - otlp
-      processors:
-      - batch
-      exporters:
-      - logging
+  - gomod: go.opentelemetry.io/collector/processor/batchprocessor v0.69.1
