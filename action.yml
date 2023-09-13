@@ -21,3 +21,4 @@ runs:
   args:
     - ${{ inputs.output_dir}}
     - ${{ inputs.config_file }}
+    - ${{ inputs.collector_builder_version }}
