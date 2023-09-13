@@ -9,9 +9,6 @@ inputs:
     description: 'Path to the collector builder config file'
     required: true
     default: 'config.yaml'
-outputs:
-  collector_binary_path:
-    description: 'Path to the finished binary, same as output_dir'
 runs:
   using: 'docker'
   image: 'Dockerfile'

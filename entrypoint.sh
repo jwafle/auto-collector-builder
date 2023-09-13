@@ -13,5 +13,3 @@ chmod +x /ocb
 
 echo "Building using /builder --config ${CONFIG_PATH}"
 /ocb --config ${CONFIG_PATH}
-
-echo "collector_binary_path=${OUTPUT_DIR}" >> "$GITHUB_OUTPUT"
